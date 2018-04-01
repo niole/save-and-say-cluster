@@ -1,0 +1,14 @@
+kind: "Service"
+apiVersion: "v1"
+metadata:
+  name: "connector"
+  labels:
+    app: "connector"
+spec:
+  selector:
+    app: "save-and-say"
+  ports:
+  - protocol: "TCP"
+    port: 80
+    targetPort: "s-and-s-port"
+  type: NodePort

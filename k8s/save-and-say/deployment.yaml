@@ -1,0 +1,24 @@
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+  name: "save-and-say"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "save-and-say"
+  template:
+    metadata:
+      name: "save-and-say"
+      labels:
+        app: "save-and-say"
+    spec:
+      containers:
+      - name: "save-and-say"
+        image: "quay.io/niole/save-and-say:latest"
+        ports:
+        - containerPort: 3000
+          name: "s-and-s-port"
+        imagePullPolicy: "IfNotPresent"
+      nodeSelector:
+        main: "true"
