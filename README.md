@@ -6,9 +6,9 @@
 
 ## Service
 
-* automates targetPort resolution by depending on the name of
+* automates `targetPort` resolution by depending on the name of
 the deployment's port rather than a hardcoded number
-* is of type NodePort and exposes the deployment it's linked to
+* is of type `NodePort` and exposes the deployment it's linked to
   to the web given a dynamic host and port
 
 ## App
@@ -16,6 +16,6 @@ the deployment's port rather than a hardcoded number
 * a node server built with express
 * Dockerized
 * has a corresponding repo at `quay.io/niole/save-and-say`
-* exposes `/saved/` and `/save/:stringToSave/` GET endpoints
+* exposes `/saved` and `/save/:stringToSave` GET endpoints
 * `/saved` returns a csv which is appended to by
-  `/save/:stringToSave/`
+  `/save/:stringToSave`
